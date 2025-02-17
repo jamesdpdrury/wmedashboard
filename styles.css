@@ -1,0 +1,308 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    text-decoration: none;
+}
+
+/*CUSTOM STYLES */
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(60, 60, 60);
+    background-color: #f4f4f4;
+}
+.client{
+    margin-top: 30px;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+}
+.client::before{
+    content: "Client Info:";
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #dfdfdf;
+    text-align: center;
+    text-transform: uppercase;
+}
+.equipment::before{
+    content: "Equipment Info:";
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #dfdfdf;
+    text-align: center;
+    text-transform: uppercase;
+}
+.event {
+    width: calc(95% - 20px);
+    margin: 0 auto 20px;
+    background-color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    height: 0;
+    padding-top: 55px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: height 0.3s ease, padding-top 0.3s ease;
+    z-index: 100;
+}
+
+/* Initially hide children except .date */
+.event .top_info, 
+.event .venue, 
+.event .timings, 
+.event .equipment, 
+.event .extras, 
+.event .client, 
+.event .staff {
+    display: none;
+}
+
+/* Expanded state */
+.event.expanded {
+    padding-top: 114px;
+}
+
+/* Show children when expanded */
+ 
+.event.expanded .venue, 
+.event.expanded .extras, 
+.event.expanded .client {
+    display: block;
+}
+.event.expanded .top_info, .event.expanded .timings, 
+.event.expanded .equipment, .event.expanded .staff {
+    display: flex;
+}
+
+.event:first-child {
+    margin-top: 2.5vw;
+}
+.event .date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+}
+.extras {
+    border-bottom: 0!important;
+    margin-top: 0!important;
+}
+
+footer {
+    width: 100%;
+    font-size: 10px;
+    color: rgb(109, 109, 109);
+    text-align: center;
+}
+.logo {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-size: 18px;
+}
+.logo span {
+    font-weight: 900;
+    display: block;
+    margin-top: 10px;
+}
+.map {
+    display: block;
+    background: #73f173;
+    width: fit-content;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 10px auto 0;
+    text-align: center;
+}
+.month {
+    width: calc(95% - 20px);
+    margin: 0 auto 10px;
+    text-align: center;
+    background-color: #525252;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+.notes{
+    margin-top: 60px;
+    padding: 5px;
+    text-align: left;
+    position: relative;
+}
+.notes::before{
+    content: "Notes:";
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #dfdfdf;
+    text-align: center;
+    text-transform: uppercase;
+}
+.photobooth {
+    background-color: #ee1f25;
+    color: #ffffff;
+}
+
+.silentdisco {
+    background-color: #662382;
+    color: #ffffff;
+}
+.staff{
+    margin-top: 60px;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.staff div {
+    text-transform: uppercase;
+    padding: 5px;
+}
+.staff::before{
+    content: "Staff:";
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #dfdfdf;
+    text-align: center;
+    text-transform: uppercase;
+}
+.timings {
+    margin-bottom:26px;
+}
+.timings, .equipment, .extras {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    position: relative;
+}
+.timings div, .equipment div, .extras div {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 10px 5px;
+}
+
+.timings div span, .equipment div span, .extras div span {
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.timings::before{
+    content: "Timings:";
+    position: absolute;
+    top: -40px;
+    left: -10px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #dfdfdf;
+    text-align: center;
+    text-transform: uppercase;
+}
+.top_info {
+    position: absolute;
+    top: 56px;
+    left: 0px;
+    width: calc(100% - 20px);
+    padding: 5px 10px;
+    background: #000000;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    align-items: center;
+    color: #ffffff;
+}
+.venue {
+    position: relative;
+    padding: 5px 0 35px;
+    text-align: center;
+}
+.venue::before{
+    content: "Venue Info:";
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #dfdfdf;
+    text-align: center;
+    text-transform: uppercase;
+}
+.year {
+    width: calc(95% - 20px);
+    margin: 0 auto 10px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
